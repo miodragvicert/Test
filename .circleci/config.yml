@@ -12,8 +12,10 @@ jobs:
     steps:
       - run: mvn test
       
-workflos:
+workflows:
   build_test:
-    - jobs:
-      build
-      test
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
