@@ -1,15 +1,14 @@
 version: 2.1
 
+orbs:
+  maven: circleci/maven@0.0.12
+
 jobs:
   build:
-    docker: 
-      - image: ubuntu:14.04
     steps:
       - checkout
       - run: mvn install 
   test:
-    docker: 
-      - image: ubuntu:14.04
     steps:
       - run: mvn test
       
