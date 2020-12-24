@@ -24,7 +24,7 @@ public class ControllerTest {
         RestAssured
                 .get("/test")
                 .then()
-                .statusCode(200);
+                .statusCode(201);
     }
 
 }
