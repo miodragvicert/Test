@@ -12,6 +12,7 @@ jobs:
   test:
     executor: exec
     steps:
+      - checkout
       - run: mvn test
       
 workflows:
