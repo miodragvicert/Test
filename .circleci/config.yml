@@ -5,10 +5,12 @@ orbs:
 
 jobs:
   build:
+    executor: default
     steps:
       - checkout
       - run: mvn install 
   test:
+    executor: default
     steps:
       - run: mvn test
       
