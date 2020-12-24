@@ -1,16 +1,17 @@
 version: 2.1
-jobs:
-  build:
+executors:
+  exec:
     docker:
       - image: circleci/openjdk:8-jdk
+jobs:
+  build:
+    executor: exec
     steps:
       - checkout
       - run: mvn install -DskipTests
   test:
-    docker:
-      - image: circleci/openjdk:8-jdk
+    executor: exec
     steps:
-      - checkout
       - run: mvn test
       
 workflows:
