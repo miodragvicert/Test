@@ -1,10 +1,13 @@
 version: 2.1
-
-orbs:
-  maven: circleci/maven@0.0.12
-
-workflows:
-  maven_test:
-    jobs:
-      - maven/test:
-        command: '-mvn install'
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: mvn install
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - run: mvn test
