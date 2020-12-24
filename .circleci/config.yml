@@ -11,3 +11,9 @@ jobs:
       - image: circleci/openjdk:8-jdk
     steps:
       - run: mvn test
+      
+workflos:
+  build_test:
+    - jobs:
+      build
+      test
