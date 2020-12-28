@@ -23,7 +23,8 @@ jobs:
   build_test2:
     executor: exec
     parameters:
-      some-value: zika
+      some-value:
+        default: zika
     steps:
       - testcommand
 workflows:
