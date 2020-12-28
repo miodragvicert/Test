@@ -20,7 +20,9 @@ jobs:
     executor: exec
     steps:
       - testcommand:
-        some-value: zika
+        some-value:
+          type: string
+          default: zika
   build_test2:
     executor: exec
     steps:
