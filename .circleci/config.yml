@@ -30,3 +30,6 @@ workflows:
     jobs:
       - build_test1
       - build_test2
+  build_test_only_one:
+    jobs:
+      - build_test1
