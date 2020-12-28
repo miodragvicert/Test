@@ -3,14 +3,25 @@ executors:
   exec:
     docker:
       - image: circleci/openjdk:8-jdk
-jobs:
-  build_test:
-    executor: exec
+commands:
+  testcommand:
+    description: "Some description"
+    parameters:
     steps:
       - checkout
       - run: mvn install -DskipTests
       - run: mvn test
+jobs:
+  build_test1:
+    executor: exec
+    steps:
+      - testcommand
+  build_test2:
+    executor: exec
+    steps:
+      - testcommand
 workflows:
   build_test:
     jobs:
-      - build_test
+      - build_test1
+      - build_test2
