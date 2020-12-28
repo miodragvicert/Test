@@ -19,7 +19,8 @@ jobs:
   build_test1:
     executor: exec
     steps:
-      - testcommand
+      - testcommand:
+          some-value: zika
   build_test2:
     executor: exec
     steps:
@@ -28,5 +29,4 @@ workflows:
   build_test:
     jobs:
       - build_test1
-      - build_test2:
-          some-value: zika
+      - build_test2
