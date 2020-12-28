@@ -22,12 +22,12 @@ jobs:
       - testcommand
   build_test2:
     executor: exec
+    parameters:
+      some-value: zika
     steps:
       - testcommand
 workflows:
   build_test:
     jobs:
       - build_test1
-      - build_test2:
-        e:
-          some-value: zika
+      - build_test2
