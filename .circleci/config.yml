@@ -29,4 +29,5 @@ workflows:
     jobs:
       - build_test1
       - build_test2:
-         some-value: zika
+        e:
+          some-value: zika
