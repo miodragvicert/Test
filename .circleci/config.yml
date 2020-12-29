@@ -15,8 +15,8 @@ commands:
           default: mika
     steps:
       - checkout
-      - run: mvn install -DskipTests
-      - run: mvn test
+      - run: gradle build
+      - run: gradle test
       - run: echo Hello << parameters.some-value >>
 jobs:
   build_test1:
