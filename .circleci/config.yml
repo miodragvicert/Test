@@ -3,6 +3,9 @@ executors:
   exec:
     docker:
       - image: circleci/openjdk:8-jdk
+orbs:
+  aws-ecr: circleci/aws-ecr@0.0.2
+  aws-ecs: circleci/aws-ecs@0.0.10
 commands:
   testcommand:
     description: "Some description"
